@@ -9,7 +9,10 @@ input.onButtonPressed(Button.B, function () {
 })
 input.onGesture(Gesture.Shake, function () {
     bullet = game.createSprite(player.get(LedSpriteProperty.X), player.get(LedSpriteProperty.Y))
-    bullet.move(1)
+    for (let index = 0; index < 6; index++) {
+        bullet.move(1)
+        control.waitMicros(0.2)
+    }
     if (bullet.isTouchingEdge()) {
         bullet.delete()
     }
